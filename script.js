@@ -8,7 +8,7 @@ const languageButtons = document.querySelectorAll("[data-lang]");
 
 const translations = {
   en: {
-    "metadata.title": "Jiajia Yu Real Estate | www.yujiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu Real Estate | yuajiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu is a residential and commercial real estate broker serving Montreal, the South Shore, Laval, and Greater Montreal in English, French, and Mandarin Chinese.",
     "brand.role": "Real Estate Broker",
@@ -114,7 +114,7 @@ const translations = {
     "footer.tagline": "Residential and Commercial Real Estate Broker · Greater Montreal",
   },
   fr: {
-    "metadata.title": "Jiajia Yu Immobilier | www.yujiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu Immobilier | yuajiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu est courtier immobilier résidentiel et commercial dans le Grand Montréal, au service de Montréal, de la Rive-Sud, de Laval et des environs en anglais, français et mandarin.",
     "brand.role": "Courtier immobilier",
@@ -220,7 +220,7 @@ const translations = {
     "footer.tagline": "Courtier immobilier résidentiel et commercial · Grand Montréal",
   },
   zh: {
-    "metadata.title": "Jiajia Yu 房地产 | www.yujiajiarealestate.ca",
+    "metadata.title": "Jiajia Yu 房地产 | yuajiajiarealestate.ca",
     "metadata.description":
       "Jiajia Yu 是服务大蒙特利尔地区的住宅及商业地产经纪，服务范围包括蒙特利尔、南岸、拉瓦尔及周边地区，可用英语、法语和中文沟通。",
     "brand.role": "房地产经纪",
