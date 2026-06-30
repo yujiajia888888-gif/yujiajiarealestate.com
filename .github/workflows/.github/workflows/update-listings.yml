@@ -1,0 +1,39 @@
+name: Update eXp Listings
+
+on:
+  schedule:
+    - cron: "15 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-listings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update listing data
+        run: node scripts/update-listings.mjs --limit=9
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet listings.json; then
+            echo "No listing changes found."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add listings.json
+          git commit -m "Update eXp listings"
+          git push
+
