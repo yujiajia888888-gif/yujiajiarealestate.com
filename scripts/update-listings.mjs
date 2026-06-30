@@ -98,6 +98,22 @@ export function buildListingsPayload(html, { limit = DEFAULT_LIMIT, sourceUrl = 
   };
 }
 
+const listingDataSignature = (payload) =>
+  JSON.stringify({
+    sourceUrl: payload?.sourceUrl,
+    limit: payload?.limit,
+    listings: payload?.listings,
+  });
+
+async function readExistingPayload(output) {
+  try {
+    return JSON.parse(await fs.readFile(output, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT" || error instanceof SyntaxError) return null;
+    throw error;
+  }
+}
+
 export function fetchText(url) {
   return new Promise((resolve, reject) => {
     const request = https.get(
@@ -149,9 +165,14 @@ export async function updateListingsFile({
     throw new Error("No listings found. eXp page structure may have changed.");
   }
 
+  const existingPayload = await readExistingPayload(output);
+  if (existingPayload && listingDataSignature(existingPayload) === listingDataSignature(payload)) {
+    return { ...existingPayload, unchanged: true };
+  }
+
   await fs.mkdir(path.dirname(output), { recursive: true });
   await fs.writeFile(output, `${JSON.stringify(payload, null, 2)}\n`);
-  return payload;
+  return { ...payload, unchanged: false };
 }
 
 const parseArgs = (argv) =>
@@ -169,11 +190,11 @@ const parseArgs = (argv) =>
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   updateListingsFile(parseArgs(process.argv.slice(2)))
     .then((payload) => {
-      console.log(`Updated ${payload.listings.length} listings in listings.json`);
+      const action = payload.unchanged ? "Already current" : "Updated";
+      console.log(`${action}: ${payload.listings.length} listings in listings.json`);
     })
     .catch((error) => {
       console.error(error.message);
       process.exitCode = 1;
     });
 }
-
