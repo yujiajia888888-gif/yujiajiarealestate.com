@@ -115,7 +115,7 @@ textarea {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
   font-weight: 800;
 }
 
@@ -289,7 +289,7 @@ h3 {
 
 .proof {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background: var(--green-deep);
   color: var(--white);
   padding: 0 max(20px, calc((100vw - var(--max)) / 2));
@@ -329,6 +329,7 @@ section[id] {
 .intro-grid,
 .listing-grid,
 .service-grid,
+.guide-grid,
 .areas-section,
 .about-section,
 .contact-section {
@@ -437,6 +438,70 @@ section[id] {
   border-bottom: 2px solid var(--copper);
 }
 
+.agency-listings-band {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 34px;
+  padding: 30px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+.agency-listings-intro {
+  display: grid;
+  gap: 16px;
+  max-width: 540px;
+}
+
+.agency-listings-intro h3 {
+  font-size: clamp(1.42rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.agency-listings-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.agency-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.listing-status,
+.listings-updated {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.listing-status {
+  grid-column: 1 / -1;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  font-weight: 800;
+}
+
+.listings-updated {
+  grid-column: 2;
+  align-self: end;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.agency-listing-card .listing-card-body {
+  padding: 18px;
+}
+
+.agency-listing-card h3 {
+  font-size: 0.98rem;
+}
+
 .section-light {
   background: var(--paper);
 }
@@ -460,6 +525,62 @@ section[id] {
   margin: 16px 0 0;
   color: var(--muted);
   line-height: 1.62;
+}
+
+.guides-section {
+  background: var(--white);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.guide-card {
+  display: grid;
+  gap: 18px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.guide-number {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--white);
+  border-radius: 8px;
+  background: var(--green);
+  font-weight: 900;
+}
+
+.guide-card h3 {
+  font-size: 1.45rem;
+}
+
+.guide-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.guide-list li::marker {
+  color: var(--copper);
+  font-weight: 900;
+}
+
+.guide-source {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--green);
+  font-weight: 900;
+  border-bottom: 2px solid var(--copper);
 }
 
 .areas-section {
@@ -528,6 +649,32 @@ section.areas-section {
   border-radius: 8px;
   background: var(--white);
   box-shadow: var(--shadow);
+}
+
+.credential-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.credential-list p {
+  margin: 0;
+}
+
+.credential-list span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.credential-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.35;
 }
 
 .profile-panel a {
@@ -678,7 +825,9 @@ section.contact-section {
   .proof,
   .intro-grid,
   .listing-grid,
+  .agency-listings-band,
   .service-grid,
+  .guide-grid,
   .areas-section,
   .about-section,
   .contact-section {
@@ -686,7 +835,7 @@ section.contact-section {
   }
 
   .proof {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .service-grid {
@@ -695,6 +844,14 @@ section.contact-section {
 
   .listing-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .agency-preview-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .listings-updated {
+    grid-column: 1;
   }
 
   .areas-copy {
@@ -759,7 +916,15 @@ section.contact-section {
     grid-template-columns: 1fr;
   }
 
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
   .listing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agency-preview-grid {
     grid-template-columns: 1fr;
   }
 
