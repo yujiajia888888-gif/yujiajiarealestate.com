@@ -7,107 +7,95 @@ const year = document.querySelector("[data-year]");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const agencyListingsContainer = document.querySelector("[data-agency-listings]");
 const listingsUpdated = document.querySelector("[data-listings-updated]");
-const AGENCY_LISTING_PREVIEW_LIMIT = 6;
 
 const fallbackAgencyListings = [
   {
-    id: "17932864",
-    status: "For Sale",
-    price: "$390,000",
-    address: "2923 Rue des Galets",
-    location: "Carignan, Montérégie",
-    beds: 2,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/17932864/17932864-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/17932864",
-  },
-  {
-    id: "27678671",
-    status: "For Sale",
-    price: "$635,000",
-    address: "882 Rue de la Falaise",
-    location: "Pincourt, Montérégie",
-    beds: 3,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/27678671/27678671-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/27678671",
-  },
-  {
-    id: "19644170",
-    status: "For Sale",
-    price: "$449,900",
-    address: "#11 270 Boul. d'Europe",
-    location: "Aylmer, Outaouais",
-    beds: 3,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/19644170/19644170-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/19644170",
-  },
-  {
-    id: "15996073",
-    status: "For Sale",
-    price: "$349,000",
-    address: "1180 Rue Blanchard",
-    location: "Fleurimont, Estrie",
-    beds: 4,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/15996073/15996073-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/15996073",
-  },
-  {
-    id: "26078835",
-    status: "For Sale",
-    price: "$585,000",
-    address: "640 Rue Ste-Julie",
-    location: "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
-    beds: 4,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/26078835/26078835-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/26078835",
-  },
-  {
-    id: "25447426",
-    status: "For Sale",
-    price: "$849,000",
-    address: "#2802 1188 Av. Union",
+    id: "15606293",
+    status: "For Lease",
+    price: "$1,450/M",
+    address: "#761 98 Rue Charlotte",
     location: "Ville-Marie, Montréal",
-    beds: 2,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/25447426/25447426-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/25447426",
-  },
-  {
-    id: "26984653",
-    status: "For Sale",
-    price: "$424,900",
-    address: "536 Rue Matte",
-    location: "Buckingham, Outaouais",
-    beds: 4,
+    beds: 1,
     bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/26984653/26984653-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/26984653",
+    image: "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/15606293",
   },
   {
-    id: "15121737",
-    status: "For Sale",
-    price: "$925,000",
-    address: "19 Rue Parklane",
-    location: "Dollard-des-Ormeaux, Montréal",
-    beds: 4,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/15121737/15121737-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/15121737",
+    id: "16635321",
+    status: "For Lease",
+    price: "$2,100/M",
+    address: "#201 2235 Route 133",
+    location: "Saint-Jean-sur-Richelieu, Montérégie",
+    beds: 3,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/16635321",
   },
   {
-    id: "23782953",
+    id: "28515632",
+    status: "For Lease",
+    price: "$1,900/M",
+    address: "#202 2235 Route 133",
+    location: "Saint-Jean-sur-Richelieu, Montérégie",
+    beds: 3,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/28515632",
+  },
+  {
+    id: "26923064",
     status: "For Sale",
-    price: "$629,900",
-    address: "4739 Rue Viau",
-    location: "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
-    beds: 4,
-    bathrooms: 2,
-    image: "https://realestate.marketingwebsites.ca/property-images/23782953/23782953-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/23782953",
+    price: "$309,000",
+    address: "#304 110 Av. du Golf",
+    location: "La Prairie, Montérégie",
+    beds: 1,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/26923064",
+  },
+  {
+    id: "24566260",
+    status: "For Sale",
+    price: "$1,199,000",
+    address: "8630 Rue Sherbrooke E.",
+    location: "Mercier/Hochelaga-Maisonneuve, Montréal",
+    beds: 0,
+    bathrooms: 0,
+    image: "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/24566260",
+  },
+  {
+    id: "16451247",
+    status: "For Sale",
+    price: "$98,000",
+    address: "8630 Rue Sherbrooke E.",
+    location: "Mercier/Hochelaga-Maisonneuve, Montréal",
+    beds: 0,
+    bathrooms: 0,
+    image: "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/16451247",
+  },
+  {
+    id: "15377722",
+    status: "For Sale",
+    price: "$460,000",
+    address: "#1628 1518 Rue Sherbrooke O.",
+    location: "Ville-Marie, Montréal",
+    beds: 1,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/15377722/15377722-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/15377722",
+  },
+  {
+    id: "18454919",
+    status: "For Lease",
+    price: "$1,550/M",
+    address: "#1628 1518 Rue Sherbrooke O.",
+    location: "Ville-Marie, Montréal",
+    beds: 1,
+    bathrooms: 1,
+    image: "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
+    url: "https://expquebec.com/en/properties/mls/18454919",
   },
 ];
 
@@ -139,9 +127,9 @@ const translations = {
     "intro.copy2":
       "Whether you are buying your first home, preparing to sell, reviewing a commercial opportunity, or comparing investment options, you get direct communication and a practical plan.",
     "listings.eyebrow": "Featured listings",
-    "listings.title": "Featured listings and eXp Québec agency inventory.",
+    "listings.title": "Featured listings and current eXp Québec listings.",
     "listings.copy":
-      "Review Jiajia's featured listing links below, then open his eXp Québec profile for the full agency inventory. Availability and prices can change, so use the source listing pages for the latest details.",
+      "Review Jiajia's featured listing links below, then browse every listing currently shown on his eXp Québec profile. Availability and prices can change, so use the source listing pages for the latest details.",
     "listings.loading": "Loading current eXp Québec listings...",
     "listings.error": "Current listings could not be loaded. Please open the eXp Québec profile for the latest inventory.",
     "listings.updated": "Auto-updated from eXp Québec",
@@ -164,9 +152,9 @@ const translations = {
     "listing.bathroomPlural": "bathrooms",
     "listing.view": "View on Centris",
     "exp.eyebrow": "eXp Québec agency",
-    "exp.title": "More inventory through Jiajia's eXp Québec broker profile.",
+    "exp.title": "All current listings from Jiajia's eXp Québec profile.",
     "exp.copy":
-      "Jiajia's eXp Québec profile shows Yu Jiajia Immobilier Inc., his residential and commercial broker profile, and the agency listing feed. Open the eXp source page for the newest inventory and availability.",
+      "This section loads every listing currently shown on Jiajia's eXp Québec profile. Open the eXp source page for the official listing record and availability.",
     "exp.viewProfile": "View eXp profile & listings",
     "exp.viewAll": "See all my listings",
     "exp.viewListing": "View on eXp Québec",
@@ -263,9 +251,9 @@ const translations = {
     "intro.copy2":
       "Que vous achetiez votre première propriété, prépariez une vente, analysiez une occasion commerciale ou compariez des options d’investissement, vous recevez une communication directe et un plan pratique.",
     "listings.eyebrow": "Inscriptions en vedette",
-    "listings.title": "Inscriptions en vedette et inventaire de l'agence eXp Québec.",
+    "listings.title": "Inscriptions en vedette et inscriptions eXp Québec actuelles.",
     "listings.copy":
-      "Consultez les liens d'inscriptions en vedette de Jiajia, puis ouvrez son profil eXp Québec pour voir l'inventaire complet de l'agence. La disponibilité et les prix peuvent changer; utilisez les pages sources pour les détails les plus récents.",
+      "Consultez les liens d'inscriptions en vedette de Jiajia, puis parcourez chaque inscription actuellement affichée sur son profil eXp Québec. La disponibilité et les prix peuvent changer; utilisez les pages sources pour les détails les plus récents.",
     "listings.loading": "Chargement des inscriptions eXp Québec actuelles...",
     "listings.error": "Les inscriptions actuelles n'ont pas pu être chargées. Ouvrez le profil eXp Québec pour l'inventaire le plus récent.",
     "listings.updated": "Mis à jour automatiquement depuis eXp Québec",
@@ -288,9 +276,9 @@ const translations = {
     "listing.bathroomPlural": "salles de bain",
     "listing.view": "Voir sur Centris",
     "exp.eyebrow": "Agence eXp Québec",
-    "exp.title": "Plus d'inventaire via le profil de courtier eXp Québec de Jiajia.",
+    "exp.title": "Toutes les inscriptions actuelles du profil eXp Québec de Jiajia.",
     "exp.copy":
-      "Le profil eXp Québec de Jiajia présente Yu Jiajia Immobilier Inc., son profil de courtier résidentiel et commercial, ainsi que le fil d'inscriptions de l'agence. Ouvrez la page source eXp pour l'inventaire et la disponibilité les plus récents.",
+      "Cette section charge chaque inscription actuellement affichée sur le profil eXp Québec de Jiajia. Ouvrez la page source eXp pour la fiche officielle et la disponibilité.",
     "exp.viewProfile": "Voir le profil eXp et les inscriptions",
     "exp.viewAll": "Voir toutes mes inscriptions",
     "exp.viewListing": "Voir sur eXp Québec",
@@ -387,9 +375,9 @@ const translations = {
     "intro.copy2":
       "无论您是购买第一套房、准备出售、评估商业机会，还是比较投资选择，您都会得到直接沟通和实用计划。",
     "listings.eyebrow": "精选房源",
-    "listings.title": "精选房源和 eXp Québec 公司房源库存。",
+    "listings.title": "精选房源和当前 eXp Québec 房源。",
     "listings.copy":
-      "先查看 Jiajia 的精选房源链接，再打开他的 eXp Québec 个人资料查看公司完整房源库存。房源状态和价格可能变化，请以源页面的最新信息为准。",
+      "先查看 Jiajia 的精选房源链接，再浏览他 eXp Québec 资料页上当前显示的每一个房源。房源状态和价格可能变化，请以源页面的最新信息为准。",
     "listings.loading": "正在加载最新 eXp Québec 房源...",
     "listings.error": "当前房源暂时无法加载。请打开 eXp Québec 资料查看最新库存。",
     "listings.updated": "已从 eXp Québec 自动更新",
@@ -412,9 +400,9 @@ const translations = {
     "listing.bathroomPlural": "间浴室",
     "listing.view": "在 Centris 查看",
     "exp.eyebrow": "eXp Québec 公司",
-    "exp.title": "通过 Jiajia 的 eXp Québec 经纪资料查看更多房源。",
+    "exp.title": "Jiajia 的 eXp Québec 资料页上的全部当前房源。",
     "exp.copy":
-      "Jiajia 的 eXp Québec 资料显示 Yu Jiajia Immobilier Inc.、住宅及商业地产经纪资料，以及公司房源列表。请打开 eXp 源页面查看最新库存和可售状态。",
+      "本区块会载入 Jiajia eXp Québec 资料页当前显示的每一个房源。请打开 eXp 源页面查看官方房源记录和可售状态。",
     "exp.viewProfile": "查看 eXp 资料和房源",
     "exp.viewAll": "查看我的所有房源",
     "exp.viewListing": "在 eXp Québec 查看",
@@ -557,7 +545,6 @@ const renderAgencyListings = () => {
   }
 
   agencyListingsContainer.innerHTML = agencyListings
-    .slice(0, AGENCY_LISTING_PREVIEW_LIMIT)
     .map(
       (listing) => `
         <article class="listing-card agency-listing-card">
@@ -596,7 +583,7 @@ const loadAgencyListings = async () => {
       throw new Error("Listings JSON is empty.");
     }
 
-    agencyListings = data.listings.slice(0, AGENCY_LISTING_PREVIEW_LIMIT);
+    agencyListings = data.listings;
     agencyListingsGeneratedAt = data.generatedAt || null;
   } catch (error) {
     console.warn(error);
