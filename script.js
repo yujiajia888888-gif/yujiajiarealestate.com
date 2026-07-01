@@ -7,6 +7,7 @@ const year = document.querySelector("[data-year]");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const agencyListingsContainer = document.querySelector("[data-agency-listings]");
 const listingsUpdated = document.querySelector("[data-listings-updated]");
+const AGENCY_LISTING_PREVIEW_LIMIT = 6;
 
 const fallbackAgencyListings = [
   {
@@ -167,6 +168,7 @@ const translations = {
     "exp.copy":
       "Jiajia's eXp Québec profile shows Yu Jiajia Immobilier Inc., his residential and commercial broker profile, and the agency listing feed. Open the eXp source page for the newest inventory and availability.",
     "exp.viewProfile": "View eXp profile & listings",
+    "exp.viewAll": "See all my listings",
     "exp.viewListing": "View on eXp Québec",
     "services.eyebrow": "Services",
     "services.title": "Support for buyers, sellers, and investors.",
@@ -290,6 +292,7 @@ const translations = {
     "exp.copy":
       "Le profil eXp Québec de Jiajia présente Yu Jiajia Immobilier Inc., son profil de courtier résidentiel et commercial, ainsi que le fil d'inscriptions de l'agence. Ouvrez la page source eXp pour l'inventaire et la disponibilité les plus récents.",
     "exp.viewProfile": "Voir le profil eXp et les inscriptions",
+    "exp.viewAll": "Voir toutes mes inscriptions",
     "exp.viewListing": "Voir sur eXp Québec",
     "services.eyebrow": "Services",
     "services.title": "Accompagnement pour acheteurs, vendeurs et investisseurs.",
@@ -413,6 +416,7 @@ const translations = {
     "exp.copy":
       "Jiajia 的 eXp Québec 资料显示 Yu Jiajia Immobilier Inc.、住宅及商业地产经纪资料，以及公司房源列表。请打开 eXp 源页面查看最新库存和可售状态。",
     "exp.viewProfile": "查看 eXp 资料和房源",
+    "exp.viewAll": "查看我的所有房源",
     "exp.viewListing": "在 eXp Québec 查看",
     "services.eyebrow": "服务",
     "services.title": "为买家、卖家和投资者提供支持。",
@@ -553,7 +557,7 @@ const renderAgencyListings = () => {
   }
 
   agencyListingsContainer.innerHTML = agencyListings
-    .slice(0, 9)
+    .slice(0, AGENCY_LISTING_PREVIEW_LIMIT)
     .map(
       (listing) => `
         <article class="listing-card agency-listing-card">
@@ -592,7 +596,7 @@ const loadAgencyListings = async () => {
       throw new Error("Listings JSON is empty.");
     }
 
-    agencyListings = data.listings.slice(0, 9);
+    agencyListings = data.listings.slice(0, AGENCY_LISTING_PREVIEW_LIMIT);
     agencyListingsGeneratedAt = data.generatedAt || null;
   } catch (error) {
     console.warn(error);
