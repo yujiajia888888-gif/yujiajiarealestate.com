@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const SOURCE_URL = "https://expquebec.com/en/brokers/jiajia-yu/";
-export const DEFAULT_LIMIT = 9;
+export const DEFAULT_LIMIT = 6;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultOutputPath = path.resolve(scriptDir, "..", "listings.json");
