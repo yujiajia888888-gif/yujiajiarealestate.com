@@ -71,8 +71,8 @@ const sampleBrokerHtml = `
 </div>
 `;
 
-test("DEFAULT_LIMIT keeps the website preview to six eXp listings", () => {
-  assert.equal(DEFAULT_LIMIT, 6);
+test("DEFAULT_LIMIT loads all available eXp listings", () => {
+  assert.equal(DEFAULT_LIMIT, null);
 });
 
 test("extractListings returns normalized eXp listing cards up to the requested limit", () => {
