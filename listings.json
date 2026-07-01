@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-30T15:50:19.844Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
-  "limit": 9,
+  "limit": 6,
   "listings": [
     {
       "id": "17932864",
@@ -68,39 +68,6 @@
       "bathrooms": 2,
       "image": "https://realestate.marketingwebsites.ca/property-images/25447426/25447426-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/25447426"
-    },
-    {
-      "id": "26984653",
-      "status": "For Sale",
-      "price": "$424,900",
-      "address": "536 Rue Matte",
-      "location": "Buckingham, Outaouais",
-      "beds": 4,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/26984653/26984653-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/26984653"
-    },
-    {
-      "id": "15121737",
-      "status": "For Sale",
-      "price": "$925,000",
-      "address": "19 Rue Parklane",
-      "location": "Dollard-des-Ormeaux, Montréal",
-      "beds": 4,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/15121737/15121737-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/15121737"
-    },
-    {
-      "id": "23782953",
-      "status": "For Sale",
-      "price": "$629,900",
-      "address": "4739 Rue Viau",
-      "location": "Brompton/Rock Forest/Saint-Élie/Deauville, Estrie",
-      "beds": 4,
-      "bathrooms": 2,
-      "image": "https://realestate.marketingwebsites.ca/property-images/23782953/23782953-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/23782953"
     }
   ]
 }
