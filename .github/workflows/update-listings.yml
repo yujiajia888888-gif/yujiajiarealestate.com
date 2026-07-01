@@ -22,7 +22,7 @@ jobs:
           node-version: "20"
 
       - name: Update listing data
-        run: node scripts/update-listings.mjs --limit=9
+        run: node scripts/update-listings.mjs --limit=6
 
       - name: Commit changes
         run: |
@@ -36,4 +36,3 @@ jobs:
           git add listings.json
           git commit -m "Update eXp listings"
           git push
-
