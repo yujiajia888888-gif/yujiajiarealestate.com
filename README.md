@@ -26,7 +26,7 @@ Upload these files to your GitHub Pages repository, set the custom domain to `yu
 
 The site includes `listings.json`, `scripts/update-listings.mjs`, and a GitHub Actions workflow at `.github/workflows/update-listings.yml`.
 
-- The website displays the first 9 eXp Québec listings from `listings.json`.
+- The website displays the first 6 eXp Québec listings from `listings.json`.
 - GitHub Actions runs once per day and can also be run manually from **Actions > Update eXp Listings > Run workflow**.
 - When the eXp profile page has new listings, the workflow updates `listings.json`, commits the change, and GitHub Pages republishes the site.
 
