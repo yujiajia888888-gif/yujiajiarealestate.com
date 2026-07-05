@@ -1,19 +1,8 @@
 {
-  "generatedAt": "2026-07-03T17:05:25.433Z",
+  "generatedAt": "2026-07-05T16:17:53.110Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
-    {
-      "id": "16635321",
-      "status": "For Lease",
-      "price": "$2,100/M",
-      "address": "#201 2235 Route 133",
-      "location": "Saint-Jean-sur-Richelieu, Montérégie",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/16635321"
-    },
     {
       "id": "26923064",
       "status": "For Sale",
@@ -24,6 +13,17 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/26923064"
+    },
+    {
+      "id": "16635321",
+      "status": "For Lease",
+      "price": "$2,100/M",
+      "address": "#201 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16635321"
     },
     {
       "id": "28515632",
