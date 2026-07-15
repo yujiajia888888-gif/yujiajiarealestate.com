@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T16:47:53.702Z",
+  "generatedAt": "2026-07-15T16:53:45.223Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
@@ -37,15 +37,26 @@
       "url": "https://expquebec.com/en/properties/mls/28515632"
     },
     {
-      "id": "24566260",
+      "id": "16451247",
       "status": "For Sale",
-      "price": "$1,199,000",
+      "price": "$98,000",
       "address": "8630 Rue Sherbrooke E.",
       "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
       "beds": 0,
       "bathrooms": 0,
-      "image": "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/24566260"
+      "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16451247"
+    },
+    {
+      "id": "18454919",
+      "status": "For Lease",
+      "price": "$1,550/M",
+      "address": "#1628 1518 Rue Sherbrooke O.",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/18454919"
     },
     {
       "id": "15606293",
@@ -59,17 +70,6 @@
       "url": "https://expquebec.com/en/properties/mls/15606293"
     },
     {
-      "id": "16451247",
-      "status": "For Sale",
-      "price": "$98,000",
-      "address": "8630 Rue Sherbrooke E.",
-      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
-      "beds": 0,
-      "bathrooms": 0,
-      "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/16451247"
-    },
-    {
       "id": "15377722",
       "status": "For Sale",
       "price": "$460,000",
@@ -81,15 +81,15 @@
       "url": "https://expquebec.com/en/properties/mls/15377722"
     },
     {
-      "id": "18454919",
-      "status": "For Lease",
-      "price": "$1,550/M",
-      "address": "#1628 1518 Rue Sherbrooke O.",
-      "location": "Ville-Marie, Montréal",
-      "beds": 1,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/18454919"
+      "id": "24566260",
+      "status": "For Sale",
+      "price": "$1,199,000",
+      "address": "8630 Rue Sherbrooke E.",
+      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
+      "beds": 0,
+      "bathrooms": 0,
+      "image": "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/24566260"
     }
   ]
 }
