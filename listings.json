@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-15T16:53:45.223Z",
+  "generatedAt": "2026-07-21T14:22:46.163Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
     {
       "id": "26923064",
       "status": "For Sale",
-      "price": "$309,000",
+      "price": "$299,000",
       "address": "#304 110 Av. du Golf",
       "location": "La Prairie, Montérégie",
       "beds": 1,
@@ -37,6 +37,17 @@
       "url": "https://expquebec.com/en/properties/mls/28515632"
     },
     {
+      "id": "15606293",
+      "status": "For Lease",
+      "price": "$1,400/M",
+      "address": "#761 98 Rue Charlotte",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/15606293"
+    },
+    {
       "id": "16451247",
       "status": "For Sale",
       "price": "$98,000",
@@ -57,17 +68,6 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/18454919"
-    },
-    {
-      "id": "15606293",
-      "status": "For Lease",
-      "price": "$1,450/M",
-      "address": "#761 98 Rue Charlotte",
-      "location": "Ville-Marie, Montréal",
-      "beds": 1,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/15606293"
     },
     {
       "id": "15377722",
