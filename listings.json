@@ -1,19 +1,8 @@
 {
-  "generatedAt": "2026-07-26T13:56:49.618Z",
+  "generatedAt": "2026-07-28T14:37:42.693Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
-    {
-      "id": "26923064",
-      "status": "For Sale",
-      "price": "$299,000",
-      "address": "#304 110 Av. du Golf",
-      "location": "La Prairie, Montérégie",
-      "beds": 1,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/26923064"
-    },
     {
       "id": "28515632",
       "status": "For Lease",
@@ -35,6 +24,17 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/15606293"
+    },
+    {
+      "id": "26923064",
+      "status": "For Sale",
+      "price": "$299,000",
+      "address": "#304 110 Av. du Golf",
+      "location": "La Prairie, Montérégie",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/26923064"
     },
     {
       "id": "16451247",
