@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-08-03T15:16:32.956Z",
+  "generatedAt": "2026-08-05T14:33:29.866Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
+    {
+      "id": "28515632",
+      "status": "For Lease",
+      "price": "$1,860/M",
+      "address": "#202 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/28515632"
+    },
+    {
+      "id": "16635321",
+      "status": "For Lease",
+      "price": "$2,060/M",
+      "address": "#201 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16635321"
+    },
     {
       "id": "15606293",
       "status": "For Lease",
@@ -15,17 +37,6 @@
       "url": "https://expquebec.com/en/properties/mls/15606293"
     },
     {
-      "id": "16635321",
-      "status": "For Lease",
-      "price": "$2,100/M",
-      "address": "#201 2235 Route 133",
-      "location": "Saint-Jean-sur-Richelieu, Montérégie",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/16635321"
-    },
-    {
       "id": "26923064",
       "status": "For Sale",
       "price": "$299,000",
@@ -35,17 +46,6 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/26923064"
-    },
-    {
-      "id": "28515632",
-      "status": "For Lease",
-      "price": "$1,900/M",
-      "address": "#202 2235 Route 133",
-      "location": "Saint-Jean-sur-Richelieu, Montérégie",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/28515632"
     },
     {
       "id": "16451247",
