@@ -1,8 +1,19 @@
 {
-  "generatedAt": "2026-08-20T13:11:40.803Z",
+  "generatedAt": "2026-08-24T13:13:12.205Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
+    {
+      "id": "15606293",
+      "status": "For Lease",
+      "price": "$1,300/M",
+      "address": "#761 98 Rue Charlotte",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/15606293"
+    },
     {
       "id": "26923064",
       "status": "For Sale",
@@ -24,17 +35,6 @@
       "bathrooms": 0,
       "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/16451247"
-    },
-    {
-      "id": "15606293",
-      "status": "For Lease",
-      "price": "$1,400/M",
-      "address": "#761 98 Rue Charlotte",
-      "location": "Ville-Marie, Montréal",
-      "beds": 1,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/15606293"
     },
     {
       "id": "15377722",
