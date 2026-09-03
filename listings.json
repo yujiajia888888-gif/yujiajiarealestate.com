@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-27T22:16:21.087Z",
+  "generatedAt": "2026-09-03T16:26:03.113Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
     {
-      "id": "15606293",
+      "id": "16635321",
       "status": "For Lease",
-      "price": "$1,300/M",
-      "address": "#761 98 Rue Charlotte",
-      "location": "Ville-Marie, Montréal",
-      "beds": 1,
+      "price": "$2,060/M",
+      "address": "#201 2235 Route 133",
+      "location": "Saint-Jean-sur-Richelieu, Montérégie",
+      "beds": 3,
       "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/15606293"
+      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16635321"
     },
     {
       "id": "26923064",
@@ -24,6 +24,17 @@
       "bathrooms": 1,
       "image": "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/26923064"
+    },
+    {
+      "id": "15606293",
+      "status": "For Lease",
+      "price": "$1,300/M",
+      "address": "#761 98 Rue Charlotte",
+      "location": "Ville-Marie, Montréal",
+      "beds": 1,
+      "bathrooms": 1,
+      "image": "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/15606293"
     },
     {
       "id": "16451247",
@@ -57,17 +68,6 @@
       "bathrooms": 0,
       "image": "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/24566260"
-    },
-    {
-      "id": "16635321",
-      "status": "For Lease",
-      "price": "$2,060/M",
-      "address": "#201 2235 Route 133",
-      "location": "Saint-Jean-sur-Richelieu, Montérégie",
-      "beds": 3,
-      "bathrooms": 1,
-      "image": "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/16635321"
     }
   ]
 }
