@@ -8,97 +8,6 @@ const languageButtons = document.querySelectorAll("[data-lang]");
 const agencyListingsContainer = document.querySelector("[data-agency-listings]");
 const listingsUpdated = document.querySelector("[data-listings-updated]");
 
-const fallbackAgencyListings = [
-  {
-    id: "15606293",
-    status: "For Lease",
-    price: "$1,450/M",
-    address: "#761 98 Rue Charlotte",
-    location: "Ville-Marie, Montréal",
-    beds: 1,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/15606293/15606293-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/15606293",
-  },
-  {
-    id: "16635321",
-    status: "For Lease",
-    price: "$2,100/M",
-    address: "#201 2235 Route 133",
-    location: "Saint-Jean-sur-Richelieu, Montérégie",
-    beds: 3,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/16635321/16635321-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/16635321",
-  },
-  {
-    id: "28515632",
-    status: "For Lease",
-    price: "$1,900/M",
-    address: "#202 2235 Route 133",
-    location: "Saint-Jean-sur-Richelieu, Montérégie",
-    beds: 3,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/28515632/28515632-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/28515632",
-  },
-  {
-    id: "26923064",
-    status: "For Sale",
-    price: "$309,000",
-    address: "#304 110 Av. du Golf",
-    location: "La Prairie, Montérégie",
-    beds: 1,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/26923064/26923064-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/26923064",
-  },
-  {
-    id: "24566260",
-    status: "For Sale",
-    price: "$1,199,000",
-    address: "8630 Rue Sherbrooke E.",
-    location: "Mercier/Hochelaga-Maisonneuve, Montréal",
-    beds: 0,
-    bathrooms: 0,
-    image: "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/24566260",
-  },
-  {
-    id: "16451247",
-    status: "For Sale",
-    price: "$98,000",
-    address: "8630 Rue Sherbrooke E.",
-    location: "Mercier/Hochelaga-Maisonneuve, Montréal",
-    beds: 0,
-    bathrooms: 0,
-    image: "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/16451247",
-  },
-  {
-    id: "15377722",
-    status: "For Sale",
-    price: "$460,000",
-    address: "#1628 1518 Rue Sherbrooke O.",
-    location: "Ville-Marie, Montréal",
-    beds: 1,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/15377722/15377722-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/15377722",
-  },
-  {
-    id: "18454919",
-    status: "For Lease",
-    price: "$1,550/M",
-    address: "#1628 1518 Rue Sherbrooke O.",
-    location: "Ville-Marie, Montréal",
-    beds: 1,
-    bathrooms: 1,
-    image: "https://realestate.marketingwebsites.ca/property-images/18454919/18454919-01.jpg",
-    url: "https://expquebec.com/en/properties/mls/18454919",
-  },
-];
-
 const translations = {
   en: {
     "metadata.title": "Jiajia Yu Real Estate | yujiajiarealestate.ca",
@@ -473,8 +382,46 @@ const translations = {
   },
 };
 
+Object.assign(translations.en, {
+  "portal.title": "Your next step, connected to my eXp website.",
+  "portal.copy": "Browse properties, request a home evaluation, or send an online inquiry through Jiajia's dedicated eXp services. These links open in a new tab.",
+  "portal.listings": "Browse properties", "portal.listingsCopy": "Open my eXp property pages for listing details, photos and availability.", "portal.listingsAction": "View properties on eXp",
+  "portal.valuation": "Request a free home evaluation", "portal.valuationCopy": "Start a property evaluation request through my dedicated eXp form.", "portal.valuationAction": "Request an evaluation",
+  "portal.contact": "Send an online inquiry", "portal.contactCopy": "Use the online contact form on my eXp website, without opening an email app.", "portal.contactAction": "Open the contact form",
+  "portal.note": "The eXp services have their own privacy and contact-consent terms."
+});
+Object.assign(translations.fr, {
+  "portal.title": "Votre prochaine étape, sur mon site eXp.",
+  "portal.copy": "Consultez les propriétés, demandez une évaluation ou envoyez une demande en ligne grâce aux services eXp de Jiajia. Ces liens s’ouvrent dans un nouvel onglet.",
+  "portal.listings": "Consulter les propriétés", "portal.listingsCopy": "Retrouvez les détails, photos et disponibilités sur mes pages de propriétés eXp.", "portal.listingsAction": "Voir les propriétés sur eXp",
+  "portal.valuation": "Demander une évaluation gratuite", "portal.valuationCopy": "Commencez une demande d’évaluation avec mon formulaire eXp dédié.", "portal.valuationAction": "Demander une évaluation",
+  "portal.contact": "Envoyer une demande en ligne", "portal.contactCopy": "Utilisez le formulaire de contact sur mon site eXp, sans ouvrir votre application courriel.", "portal.contactAction": "Ouvrir le formulaire",
+  "portal.note": "Les services eXp ont leurs propres modalités de confidentialité et de consentement aux communications."
+});
+Object.assign(translations.zh, {
+  "portal.title": "查房源、申请估价、在线咨询。",
+  "portal.copy": "通过 Jiajia 的专属 eXp 服务继续下一步。以下入口将在新标签页打开英文页面；也可切换本站为法语后进入法语页面。",
+  "portal.listings": "查看房源", "portal.listingsCopy": "前往我的 eXp 房源页面，查看照片、详情及房源状态。", "portal.listingsAction": "在 eXp 查看房源（英文）",
+  "portal.valuation": "申请免费房产估价", "portal.valuationCopy": "通过我的 eXp 专属表单，提交房产估价申请。", "portal.valuationAction": "申请估价（英文）",
+  "portal.contact": "在线咨询", "portal.contactCopy": "使用我的 eXp 在线联系表单，无需打开邮件应用。", "portal.contactAction": "打开咨询表单（英文）",
+  "portal.note": "eXp 服务使用其各自的隐私和联系授权条款。"
+});
+
+Object.assign(translations.en, {
+  "listings.eyebrow": "Property listings", "listings.title": "Properties from my eXp Québec profile.",
+  "listings.copy": "A single listing feed, with its update date below. Open the official property page to confirm current price and availability."
+});
+Object.assign(translations.fr, {
+  "listings.eyebrow": "Propriétés", "listings.title": "Les propriétés de mon profil eXp Québec.",
+  "listings.copy": "Une seule liste de propriétés, avec sa date de mise à jour ci-dessous. Consultez la fiche officielle pour confirmer le prix et la disponibilité."
+});
+Object.assign(translations.zh, {
+  "listings.eyebrow": "房源", "listings.title": "我的 eXp Québec 房源。",
+  "listings.copy": "统一展示房源数据，更新日期见下方。请打开官方房源页面，确认最新价格与状态。"
+});
+
 let activeLanguage = "en";
-let agencyListings = fallbackAgencyListings;
+let agencyListings = [];
 let agencyListingsGeneratedAt = null;
 
 const getSavedLanguage = () => {
@@ -609,6 +556,10 @@ const applyLanguage = (language) => {
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.setAttribute("placeholder", t(element.dataset.i18nPlaceholder));
+  });
+
+  document.querySelectorAll("[data-exp-en]").forEach((element) => {
+    element.href = activeLanguage === "fr" ? element.dataset.expFr : element.dataset.expEn;
   });
 
   languageButtons.forEach((button) => {
