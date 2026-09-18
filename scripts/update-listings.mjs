@@ -49,7 +49,7 @@ const parseNumber = (value) => {
 };
 
 export function extractListings(html, { limit = DEFAULT_LIMIT, sourceUrl = SOURCE_URL } = {}) {
-  const cardRegex = /<a\s+href=["']([^"']*\/en\/properties\/mls\/(\d+)[^"']*)["'][^>]*>([\s\S]*?)<\/a>\s*<\/div>/gi;
+  const cardRegex = /<a\b[^>]*\bhref=["']([^"']*\/en\/properties\/mls\/(\d+)[^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi;
   const listings = [];
   const seen = new Set();
   const maxListings = Number.isFinite(limit) && limit > 0 ? limit : null;
@@ -161,12 +161,18 @@ export async function updateListingsFile({
 } = {}) {
   const html = input ? await fs.readFile(input, "utf8") : await fetchText(sourceUrl);
   const payload = buildListingsPayload(html, { limit, sourceUrl });
+  const existingPayload = await readExistingPayload(output);
 
   if (payload.listings.length === 0) {
-    throw new Error("No listings found. eXp page structure may have changed.");
+    if (Array.isArray(existingPayload?.listings) && existingPayload.listings.length > 0) {
+      return { ...existingPayload, preserved: true, unchanged: true };
+    }
+
+    throw new Error(
+      "No listings found and no existing listing data is available. eXp page structure may have changed.",
+    );
   }
 
-  const existingPayload = await readExistingPayload(output);
   if (existingPayload && listingDataSignature(existingPayload) === listingDataSignature(payload)) {
     return { ...existingPayload, unchanged: true };
   }
@@ -197,6 +203,9 @@ const parseArgs = (argv) =>
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   updateListingsFile(parseArgs(process.argv.slice(2)))
     .then((payload) => {
+      if (payload.preserved) {
+        console.warn("Warning: eXp returned no listings; preserved the existing listings.json file.");
+      }
       const action = payload.unchanged ? "Already current" : "Updated";
       console.log(`${action}: ${payload.listings.length} listings in listings.json`);
     })
