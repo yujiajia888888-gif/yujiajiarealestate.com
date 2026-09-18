@@ -29,6 +29,7 @@ The site includes `listings.json`, `scripts/update-listings.mjs`, and a GitHub A
 - The website displays all current eXp Québec listings from `listings.json`.
 - GitHub Actions runs once per day and can also be run manually from **Actions > Update eXp Listings > Run workflow**.
 - When the eXp profile page has new listings, the workflow updates `listings.json`, commits the change, and GitHub Pages republishes the site.
+- If eXp temporarily returns no usable listings, the workflow keeps the last successful non-empty `listings.json` instead of replacing it or failing the scheduled run.
 
 ## Contact Form
 
