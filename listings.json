@@ -1,19 +1,8 @@
 {
-  "generatedAt": "2026-10-04T16:51:02.666Z",
+  "generatedAt": "2026-10-10T17:20:49.433Z",
   "sourceUrl": "https://expquebec.com/en/brokers/jiajia-yu/",
   "limit": null,
   "listings": [
-    {
-      "id": "16451247",
-      "status": "For Sale",
-      "price": "$89,000",
-      "address": "8630 Rue Sherbrooke E.",
-      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
-      "beds": 0,
-      "bathrooms": 0,
-      "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
-      "url": "https://expquebec.com/en/properties/mls/16451247"
-    },
     {
       "id": "24566260",
       "status": "For Sale",
@@ -24,6 +13,17 @@
       "bathrooms": 0,
       "image": "https://realestate.marketingwebsites.ca/property-images/24566260/24566260-01.jpg",
       "url": "https://expquebec.com/en/properties/mls/24566260"
+    },
+    {
+      "id": "16451247",
+      "status": "For Sale",
+      "price": "$89,000",
+      "address": "8630 Rue Sherbrooke E.",
+      "location": "Mercier/Hochelaga-Maisonneuve, Montréal",
+      "beds": 0,
+      "bathrooms": 0,
+      "image": "https://realestate.marketingwebsites.ca/property-images/16451247/16451247-01.jpg",
+      "url": "https://expquebec.com/en/properties/mls/16451247"
     },
     {
       "id": "26923064",
