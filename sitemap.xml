@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yujiajiarealestate.ca/</loc>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://yujiajiarealestate.ca/</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-home-evaluation.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/en-home-evaluation.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/zh-home-evaluation.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-buy-property.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/en-buy-property.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/zh-buy-property.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-commercial-real-estate.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/en-commercial-real-estate.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/zh-commercial-real-estate.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-courtier-immobilier-brossard.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-courtier-immobilier-montreal.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/fr-courtier-immobilier-rive-sud.html</loc></url>
+  <url><loc>https://yujiajiarealestate.ca/privacy.html</loc></url>
 </urlset>

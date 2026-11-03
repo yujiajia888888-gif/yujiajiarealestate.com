@@ -12,9 +12,32 @@
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   const consent = (value) => ({ analytics_storage: value, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
   window.gtag('consent', 'default', consent('denied'));
-  // The site is a single landing page. Never send form values, URL parameters or fragments.
-  const page = { page_location: 'https://yujiajiarealestate.ca/', page_title: 'Jiajia Yu Real Estate', page_referrer: '' };
+  // Only known canonical routes are measured. Never send form values, raw queries or fragments.
+  const origin = 'https://yujiajiarealestate.ca';
+  const route = /^\/(?:$|(?:fr|en|zh)-(?:home-evaluation|buy-property|commercial-real-estate)\.html$|fr-courtier-immobilier-(?:brossard|montreal|rive-sud)\.html$|privacy\.html$)/;
+  let safePath = '/';
+  try {
+    const canonical = new URL(document.querySelector('link[rel="canonical"]')?.href || origin);
+    if (canonical.origin === origin && route.test(canonical.pathname)) safePath = canonical.pathname;
+  } catch { /* Unknown pages stay in the homepage aggregate. */ }
+  const segment = ['seller', 'buyer', 'commercial'].includes(document.body?.dataset.leadSegment) ? document.body.dataset.leadSegment : 'general';
+  const page = { page_location: origin + safePath, page_title: document.title, page_referrer: '', lead_segment: segment };
   try { page.page_referrer = new URL(document.referrer).origin + '/'; } catch { /* Direct visit. */ }
+  // Accept only the campaign labels that we publish, never arbitrary visitor query values.
+  const campaign = {};
+  const query = new URLSearchParams(window.location.search);
+  const channels = { instagram: 'organic_social', facebook: 'organic_social', google: 'organic' };
+  const aliases = { ig: 'instagram', fb: 'facebook' };
+  const rawSource = query.get('utm_source');
+  const source = Object.hasOwn(aliases, rawSource) ? aliases[rawSource] : rawSource;
+  const medium = query.get('utm_medium');
+  const legacySocial = ['instagram', 'facebook'].includes(source) && medium === 'social';
+  if (Object.hasOwn(channels, source) && (medium === channels[source] || legacySocial)) {
+    campaign.campaign_source = source;
+    campaign.campaign_medium = channels[source];
+    const name = query.get('utm_campaign');
+    if (['always-on', 'seller', 'buyer', 'commercial', 'business-profile'].includes(name)) campaign.campaign_name = name;
+  }
   const send = (name, details = {}) => {
     if (choice === 'granted') window.gtag('event', name, { ...page, ...details });
   };
@@ -26,7 +49,7 @@
     if (!loaded) {
       loaded = true;
       window.gtag('js', new Date());
-      window.gtag('config', id, { ...page, send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
+      window.gtag('config', id, { ...page, ...campaign, send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
       const script = document.createElement('script');
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
@@ -62,7 +85,7 @@
     if (href.startsWith('tel:')) send('contact_click', { contact_method: 'phone' });
     if (href.startsWith('mailto:')) send('contact_click', { contact_method: 'email' });
     const service = link?.getAttribute('data-exp-intent');
-    if (['listings', 'valuation', 'contact'].includes(service)) send('exp_portal_click', { service });
+    if (['listings', 'valuation', 'contact', 'seller', 'buyer', 'commercial'].includes(service)) send('exp_portal_click', { service });
   });
   document.querySelector('[data-contact-form]')?.addEventListener('submit', () => send('email_draft_opened'));
   const copy = {
@@ -82,3 +105,4 @@
   panel.hidden = choice === 'granted' || choice === 'denied';
   if (choice === 'granted') enable();
 })();
+
