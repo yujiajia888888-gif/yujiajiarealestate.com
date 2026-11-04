@@ -26,7 +26,7 @@
   // Accept only the campaign labels that we publish, never arbitrary visitor query values.
   const campaign = {};
   const query = new URLSearchParams(window.location.search);
-  const channels = { instagram: 'organic_social', facebook: 'organic_social', google: 'organic' };
+  const channels = { instagram: 'organic_social', facebook: 'organic_social', wechat: 'organic_social', google: 'organic' };
   const aliases = { ig: 'instagram', fb: 'facebook' };
   const rawSource = query.get('utm_source');
   const source = Object.hasOwn(aliases, rawSource) ? aliases[rawSource] : rawSource;
@@ -36,7 +36,10 @@
     campaign.campaign_source = source;
     campaign.campaign_medium = channels[source];
     const name = query.get('utm_campaign');
-    if (['always-on', 'seller', 'buyer', 'commercial', 'business-profile'].includes(name)) campaign.campaign_name = name;
+    const publishedNames = ['always-on', 'seller', 'buyer', 'commercial', 'business-profile',
+      'wechat-moments-seller', 'wechat-moments-buyer', 'wechat-moments-commercial',
+      'wechat-chat-seller', 'wechat-chat-buyer', 'wechat-chat-commercial'];
+    if (publishedNames.includes(name)) campaign.campaign_name = name;
   }
   const send = (name, details = {}) => {
     if (choice === 'granted') window.gtag('event', name, { ...page, ...details });
