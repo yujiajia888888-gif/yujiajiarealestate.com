@@ -87,6 +87,7 @@
     const href = link?.getAttribute('href') || '';
     if (href.startsWith('tel:')) send('contact_click', { contact_method: 'phone' });
     if (href.startsWith('mailto:')) send('contact_click', { contact_method: 'email' });
+    if (href.startsWith('sms:')) send('contact_click', { contact_method: 'sms' });
     const service = link?.getAttribute('data-exp-intent');
     if (['listings', 'valuation', 'contact', 'seller', 'buyer', 'commercial'].includes(service)) send('exp_portal_click', { service });
   });

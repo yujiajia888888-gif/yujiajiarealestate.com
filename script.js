@@ -424,6 +424,10 @@ Object.assign(translations.fr, {"metadata.title": "Jiajia Yu | Courtier immobili
 Object.assign(translations.en, {"metadata.title": "Jiajia Yu | Real estate broker in Montréal, Brossard & South Shore", "hero.title": "Your next move in Montréal, Brossard and the South Shore.", "hero.copy": "Jiajia Yu helps sellers, buyers and commercial clients plan their next move in Montréal, Brossard and the South Shore.", "hero.cta": "Request a free home evaluation", "areas.title": "Montréal · Brossard · South Shore", "areas.laval": "Compare condos, family homes and business locations around your priorities.", "portal.title": "One next step for your real estate project.", "portal.copy": "Selling, buying or searching for commercial space in Montréal, Brossard or the South Shore? Start with your priorities.", "portal.note": "Choose a service above to send your request online.", "contact.online": "Send an online inquiry", "contact.copy": "Use the online inquiry form, call, or prepare an email below. The email draft still needs to be sent from your own email app.", "portal.valuation": "Plan your next sale", "portal.valuationCopy": "Thinking of selling your condo, house or income property? Start with a comparative market analysis and a conversation about your timeline with Jiajia Yu.", "portal.valuationAction": "Request a free home evaluation", "portal.listings": "A prepared property search", "portal.listingsCopy": "City condo, family home or first purchase: define your criteria and understand the steps with Jiajia Yu, residential and commercial real estate broker.", "portal.listingsAction": "Discuss my property search", "portal.contact": "A location that fits your operation", "portal.contactCopy": "Retail, office or industrial space: turn your operating needs into search criteria with Jiajia Yu, residential and commercial real estate broker.", "portal.contactAction": "Discuss my commercial requirements"});
 Object.assign(translations.zh, {"metadata.title": "Jiajia Yu | 蒙特利尔、Brossard 与南岸地产经纪", "hero.title": "在蒙特利尔、Brossard 和南岸，规划你的下一步。", "hero.copy": "Jiajia Yu 协助卖家、买家和商业地产客户，在蒙特利尔、Brossard 和南岸规划下一步。", "hero.cta": "申请免费房屋市场分析", "areas.title": "Montréal · Brossard · 南岸", "areas.laval": "根据你的实际需求，比较公寓、家庭住房和商业选址。", "portal.title": "为你的地产计划，找到明确的下一步。", "portal.copy": "在蒙特利尔、Brossard 或南岸卖房、买房或找商业物业？从你的需求出发。", "portal.note": "选择上方服务入口，在线提交你的需求。", "contact.online": "在线提交咨询", "contact.copy": "可以在线咨询、致电，或使用下方表单准备邮件。邮件草稿仍需在你自己的邮件应用中亲自发送。", "portal.valuation": "先了解市场，再规划卖房", "portal.valuationCopy": "准备出售公寓、独立屋或收益物业？先与 Jiajia Yu 沟通时间安排，结合可比物业、房屋状况和当前竞争，讨论合理的挂牌策略。", "portal.valuationAction": "申请免费房屋市场分析", "portal.listings": "让选房有清晰的判断依据", "portal.listingsCopy": "无论是首次置业、城市公寓还是家庭住房，Jiajia Yu 都可以先与你梳理预算、区域和时间安排，再规划看房与出价步骤。", "portal.listingsAction": "沟通我的买房需求", "portal.contact": "从经营需求倒推物业条件", "portal.contactCopy": "寻找店铺、办公室或工业空间？先与住宅及商业地产经纪 Jiajia Yu 沟通实际用途、预算和技术条件，再建立选址标准。", "portal.contactAction": "提交商业物业需求"});
 
+Object.assign(translations.en, {"contact.sms": "Text Jiajia · 514-557-1514"});
+Object.assign(translations.fr, {"contact.sms": "Texter Jiajia · 514-557-1514"});
+Object.assign(translations.zh, {"contact.sms": "发短信给 Jiajia · 514-557-1514"});
+
 let activeLanguage = "en";
 let agencyListings = [];
 let agencyListingsGeneratedAt = null;
@@ -632,7 +636,7 @@ if (contactForm && formStatus) {
       message,
     ].join("\n");
 
-    const mailto = new URL("mailto:Yujiajia0514@hotmail.com");
+    const mailto = new URL("mailto:yujiajia0514@hotmail.com");
     mailto.searchParams.set("subject", `${t("form.subject")} ${name || t("form.subjectFallback")}`);
     mailto.searchParams.set("body", body);
 
