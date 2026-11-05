@@ -77,7 +77,7 @@
       }
     }
     panel.hidden = true;
-    settings.focus();
+    settings.focus({ preventScroll: true });
   };
   document.querySelector('[data-analytics-accept]').addEventListener('click', () => select('granted'));
   document.querySelector('[data-analytics-decline]').addEventListener('click', () => select('denied'));
@@ -91,11 +91,14 @@
     const service = link?.getAttribute('data-exp-intent');
     if (['listings', 'valuation', 'contact', 'seller', 'buyer', 'commercial'].includes(service)) send('exp_portal_click', { service });
   });
-  document.querySelector('[data-contact-form]')?.addEventListener('submit', () => send('email_draft_opened'));
+  document.addEventListener('jy-inquiry-submitted', event => {
+    const selected = event.detail?.segment;
+    if (['buyer', 'seller', 'commercial'].includes(selected)) send('inquiry_submitted', { lead_segment: selected });
+  });
   const copy = {
-    en: { title: 'Your privacy choices', text: 'With your permission, we use Google Analytics cookies to measure visits and contact-button clicks. Google receives usage and device data. We do not send your name, email address or message to Analytics. Optional analytics is off until you accept. You can change your choice below at any time.', accept: 'Allow analytics', decline: 'Decline analytics', settings: 'Privacy & analytics choices', more: 'How Google uses data', note: 'Your choice is stored in this browser. Questions: Yujiajia0514@hotmail.com. The contact form opens your own email app; it does not submit a message to this website.' },
-    fr: { title: 'Vos choix de confidentialité', text: 'Avec votre permission, nous utilisons les témoins Google Analytics pour mesurer les visites et les clics de contact. Google reçoit des données d’utilisation et d’appareil. Nous ne transmettons pas votre nom, adresse courriel ou message à Analytics. Les statistiques facultatives restent désactivées avant votre accord. Vous pouvez modifier votre choix à tout moment.', accept: 'Accepter les statistiques', decline: 'Refuser les statistiques', settings: 'Confidentialité et statistiques', more: 'Utilisation des données par Google', note: 'Votre choix est enregistré dans ce navigateur. Questions : Yujiajia0514@hotmail.com. Le formulaire ouvre votre application courriel; il ne transmet pas de message à ce site.' },
-    zh: { title: '你的隐私选择', text: '经你同意后，我们才使用 Google Analytics Cookie 统计网站访问和联系按钮点击。Google 会接收使用情况及设备数据；我们不会将你的姓名、邮箱或留言发送给 Analytics。默认关闭可选统计，你可以随时修改选择。', accept: '允许统计', decline: '拒绝统计', settings: '隐私与统计设置', more: 'Google 如何使用数据', note: '选择保存在此浏览器。隐私问题可联系 Yujiajia0514@hotmail.com。联系表单只打开你自己的邮件应用，不会向本网站提交留言。' }
+    en: { title: 'Your privacy choices', text: 'With your permission, we use Google Analytics cookies to measure visits and contact-button clicks. Google receives usage and device data. We do not send your name, email address or message to Analytics. Optional analytics is off until you accept. You can change your choice below at any time.', accept: 'Allow analytics', decline: 'Decline analytics', settings: 'Privacy & analytics choices', more: 'How Google uses data', note: 'Your choice is stored in this browser. Questions: Yujiajia0514@hotmail.com. The contact form sends your inquiry through Web3Forms independently of Analytics consent. Contact details and messages are not included in Analytics events.' },
+    fr: { title: 'Vos choix de confidentialité', text: 'Avec votre permission, nous utilisons les témoins Google Analytics pour mesurer les visites et les clics de contact. Google reçoit des données d’utilisation et d’appareil. Nous ne transmettons pas votre nom, adresse courriel ou message à Analytics. Les statistiques facultatives restent désactivées avant votre accord. Vous pouvez modifier votre choix à tout moment.', accept: 'Accepter les statistiques', decline: 'Refuser les statistiques', settings: 'Confidentialité et statistiques', more: 'Utilisation des données par Google', note: 'Votre choix est enregistré dans ce navigateur. Questions : Yujiajia0514@hotmail.com. Le formulaire transmet votre demande via Web3Forms, indépendamment de l’accord aux statistiques. Les coordonnées et messages ne sont pas inclus dans les événements Analytics.' },
+    zh: { title: '你的隐私选择', text: '经你同意后，我们才使用 Google Analytics Cookie 统计网站访问和联系按钮点击。Google 会接收使用情况及设备数据；我们不会将你的姓名、邮箱或留言发送给 Analytics。默认关闭可选统计，你可以随时修改选择。', accept: '允许统计', decline: '拒绝统计', settings: '隐私与统计设置', more: 'Google 如何使用数据', note: '选择保存在此浏览器。隐私问题可联系 Yujiajia0514@hotmail.com。咨询表单通过 Web3Forms 发送资料，不受统计选择影响。联系方式和留言不会加入统计事件。' }
   };
   const translate = () => {
     const lang = document.documentElement.lang.slice(0, 2);

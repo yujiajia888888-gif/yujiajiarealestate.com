@@ -1,8 +1,6 @@
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
-const contactForm = document.querySelector("[data-contact-form]");
-const formStatus = document.querySelector("[data-form-status]");
 const year = document.querySelector("[data-year]");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const agencyListingsContainer = document.querySelector("[data-agency-listings]");
@@ -428,6 +426,10 @@ Object.assign(translations.en, {"contact.sms": "Text Jiajia · 514-557-1514"});
 Object.assign(translations.fr, {"contact.sms": "Texter Jiajia · 514-557-1514"});
 Object.assign(translations.zh, {"contact.sms": "发短信给 Jiajia · 514-557-1514"});
 
+Object.assign(translations.en, {"contact.copy": "Send your inquiry here. Jiajia Yu will reply using the contact details you provide.", "contact.online": "Send inquiry", "portal.note": "Choose a service and send your inquiry on this website."});
+Object.assign(translations.fr, {"contact.copy": "Envoyez votre demande ici. Jiajia Yu vous répondra aux coordonnées fournies.", "contact.online": "Envoyer la demande", "portal.note": "Choisissez un service et envoyez votre demande sur ce site."});
+Object.assign(translations.zh, {"contact.copy": "直接在这里提交咨询，Jiajia Yu 会通过你提供的联系方式回复。", "contact.online": "提交咨询", "portal.note": "选择服务后，直接在本站填写咨询。"});
+
 let activeLanguage = "en";
 let agencyListings = [];
 let agencyListingsGeneratedAt = null;
@@ -615,33 +617,6 @@ if (nav && navToggle && header) {
       header.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
     }
-  });
-}
-
-if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const data = new FormData(contactForm);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const interest = String(data.get("interest") || "").trim();
-    const message = String(data.get("message") || "").trim();
-
-    const body = [
-      `${t("form.name")}: ${name}`,
-      `${t("form.email")}: ${email}`,
-      `${t("form.interest")}: ${interest}`,
-      "",
-      message,
-    ].join("\n");
-
-    const mailto = new URL("mailto:yujiajia0514@hotmail.com");
-    mailto.searchParams.set("subject", `${t("form.subject")} ${name || t("form.subjectFallback")}`);
-    mailto.searchParams.set("body", body);
-
-    formStatus.textContent = t("form.status");
-    window.location.href = mailto.toString();
   });
 }
 

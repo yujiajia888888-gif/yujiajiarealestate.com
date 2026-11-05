@@ -42,7 +42,7 @@
         ]
       }
     </script>
-  </head>
+  <link rel="stylesheet" href="/inquiry.css?v=20261105-form"></head>
   <body data-lead-segment="general">
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Jiajia Yu Real Estate home">
@@ -288,9 +288,9 @@
           <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
           <h2 data-i18n="contact.title">Ready to talk about your next move?</h2>
           <p data-i18n="contact.copy">
-            Send a quick note and your email app will open with the details ready to send to Jiajia.
+            Send your inquiry here. Jiajia Yu will reply using the contact details you provide.
           </p>
-          <p><a class="button button-primary" href="https://jiajiayu.expquebec.com/en/contact" data-exp-en="https://jiajiayu.expquebec.com/en/contact" data-exp-fr="https://jiajiayu.expquebec.com/fr/contact" data-exp-intent="contact" target="_blank" rel="noopener noreferrer" data-i18n="contact.online">Send an online inquiry</a></p><div class="contact-links">
+          <p><a  class="button button-primary" data-i18n="contact.online" href="#inquiry">Send an online inquiry</a></p><div class="contact-links">
             <a href="tel:+15145571514">514-557-1514</a>
             <a href="mailto:yujiajia0514@hotmail.com">Yujiajia0514@hotmail.com</a>
             <a href="sms:+15145571514" data-i18n="contact.sms">Text Jiajia · 514-557-1514</a>
@@ -299,33 +299,15 @@
           </div>
         </div>
 
-        <form class="contact-form" data-contact-form>
-          <label>
-            <span data-i18n="form.name">Name</span>
-            <input type="text" name="name" autocomplete="name" required />
-          </label>
-          <label>
-            <span data-i18n="form.email">Email</span>
-            <input type="email" name="email" autocomplete="email" required />
-          </label>
-          <label>
-            <span data-i18n="form.interest">Interest</span>
-            <select name="interest" required>
-              <option value="" data-i18n="form.choose">Choose one</option>
-              <option data-i18n="form.buying">Buying a home</option>
-              <option data-i18n="form.selling">Selling a property</option>
-              <option data-i18n="form.commercial">Commercial real estate</option>
-              <option data-i18n="form.investment">Investment property</option>
-              <option data-i18n="form.valuation">Market valuation</option>
-            </select>
-          </label>
-          <label>
-            <span data-i18n="form.message">Message</span>
-            <textarea name="message" rows="5" placeholder="Tell me what you are planning." data-i18n-placeholder="form.placeholder"></textarea>
-          </label>
-          <button class="button button-primary" type="submit" data-i18n="form.submit">Open Email Draft</button>
-          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
-        </form>
+        <section class="inquiry-section" id="inquiry" aria-labelledby="inquiry-title"><form class="inquiry-form" data-inquiry-form action="https://api.web3forms.com/submit" method="POST">
+<h2 id="inquiry-title" data-inquiry-text="title">Tell Jiajia about your project</h2><p class="inquiry-intro" data-inquiry-text="intro">Send your inquiry here. Jiajia Yu will reply using the contact details you provide.</p>
+<input type="hidden" name="access_key" value="be04e0c2-4953-451f-a413-a9ab362dcb6a"><input type="hidden" name="subject" value="Website inquiry — Jiajia Yu"><input type="hidden" name="from_name" value="Jiajia Yu Real Estate"><input type="hidden" name="redirect" value="https://yujiajiarealestate.ca/thank-you.html"><input type="hidden" name="language" value="en"><input type="hidden" name="page" value="https://yujiajiarealestate.ca/">
+<div class="inquiry-fields"><label><span data-inquiry-text="name">Name</span><input name="name" type="text" maxlength="120" autocomplete="name" required></label><label><span data-inquiry-text="email">Email</span><input name="email" type="email" maxlength="254" autocomplete="email" required></label><label><span data-inquiry-text="phone">Phone (optional)</span><input name="phone" type="tel" maxlength="40" autocomplete="tel"></label><label><span data-inquiry-text="project">Your project</span><select name="project" required><option value="" data-inquiry-text="choose">Choose one</option><option value="buyer" data-inquiry-text="buyer">Buying a property</option><option value="seller" data-inquiry-text="seller">Selling a property</option><option value="commercial" data-inquiry-text="commercial">Commercial property</option></select></label><label><span data-inquiry-text="area">Area (optional)</span><input name="area" type="text" maxlength="160" autocomplete="off"></label><label><span data-inquiry-text="timeline">Timeline (optional)</span><input name="timeline" type="text" maxlength="120" autocomplete="off"></label></div><label><span data-inquiry-text="message">Your needs</span><textarea name="message" rows="5" maxlength="2000"></textarea></label>
+<label class="inquiry-honey" aria-hidden="true">Leave blank<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+<label class="inquiry-consent"><input type="checkbox" name="contact_consent" value="yes" required><span data-inquiry-text="consent">I agree that Jiajia Yu may use these details to respond to this inquiry by email or phone.</span></label>
+<p class="inquiry-note"><span data-inquiry-text="note">Your inquiry is processed by Web3Forms and forwarded to Jiajia Yu. Please do not send identity documents or financial records.</span> <a href="/privacy.html#inquiries" target="_blank" rel="noopener noreferrer" data-inquiry-text="privacy">Privacy details</a></p>
+<button class="button button-primary" type="submit" data-inquiry-text="submit">Send inquiry</button><p class="inquiry-status" data-inquiry-status role="status" aria-live="polite"></p>
+</form></section>
       </section>
     </main>
 
@@ -360,8 +342,8 @@
       </div>
     </section>
 
-    <script src="script.js?v=20261105-sms"></script>
-    <script src="analytics.js?v=20261105-sms"></script>
-  </body>
+    <script src="script.js?v=20261105-form"></script>
+    <script src="analytics.js?v=20261105-form"></script>
+  <script src="/inquiry.js?v=20261105-form" defer></script></body>
 </html>
 
